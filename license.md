@@ -1,5 +1,5 @@
 # The license
 
-Copyright (c) author name <author email>
+Copyright (c) Nguyen Van Quyen <nguyenquyen18011996@gmail.com>
 
 ...Add your license text here...
