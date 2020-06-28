@@ -88,6 +88,17 @@ $ php artisan vendor:publish --tag=ckfinder-assets
 
 ## Contributing
 
+Finally, you can publish package's configuration, assets and views using only one command.
+
+## Testing
+
+``` bash
+// --tag=ckfinder-config
+$ php artisan vendor:publish --tag=ckfinder
+```
+
+## Contributing
+
 ## Testing
 
 ``` bash
@@ -169,12 +180,45 @@ $ php artisan migrate
 
 ## Contributing
 
+App/User
+
+## Testing
+
+``` bash
+
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Traits\HasRoles;
+class User{
+    ...
+    use HasRoles;
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value);
+    }
+}
+
+```
+
+## Contributing
+
+dump-autoload
+
+## Testing
+
+``` bash
+$ composer dump-autoload
+```
+
+## Contributing
+
 create data in database
 
 ## Testing
 
 ``` bash
 $ php artisan db:seed
+OR
+$ php artisan db:seed --class=UserDatabaseSeeder
 ```
 
 ## Contributing
