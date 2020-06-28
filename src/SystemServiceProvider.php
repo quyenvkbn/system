@@ -63,6 +63,7 @@ class SystemServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/system.php' => config_path('system.php'),
             __DIR__.'/../config/ckfinder.php' => config_path('ckfinder.php'),
+            __DIR__.'/../config/adminlte.php' => config_path('adminlte.php'),
             __DIR__.'/../resources/assets' => public_path('js'),
             __DIR__.'/../database/seeds' => base_path('database/seeds'),
             __DIR__.'/../resources/views/layout' => base_path('resources/views'),
