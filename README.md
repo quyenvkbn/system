@@ -223,6 +223,21 @@ $ php artisan db:seed --class=UserDatabaseSeeder
 
 ## Contributing
 
+App/Http/Kernel
+
+## Testing
+
+``` bash
+protected $routeMiddleware = [
+    ...
+    'language' => \App\Http\Middleware\LanguageSwitcher::class,   
+    'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+    'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+]
+```
+
+## Contributing
+
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
 ## Testing
