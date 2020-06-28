@@ -5,6 +5,7 @@
 	});
 })();
 
+
 function openPopup(type = 1, id_input = '', id_img = '') {
     let check_type = type;
     CKFinder.popup( {

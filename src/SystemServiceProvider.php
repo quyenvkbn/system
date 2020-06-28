@@ -62,8 +62,11 @@ class SystemServiceProvider extends ServiceProvider
         // Publishing default
         $this->publishes([
             __DIR__.'/../config/system.php' => config_path('system.php'),
+            __DIR__.'/../config/ckfinder.php' => config_path('ckfinder.php'),
             __DIR__.'/../resources/assets' => public_path('js'),
             __DIR__.'/../database/seeds' => base_path('database/seeds'),
+            __DIR__.'/../resources/views/layout' => base_path('resources/views'),
+            __DIR__.'/../middleware' => base_path('app/Http/Middleware'),
         ], 'system.default');
 
         // Publishing the configuration file.
