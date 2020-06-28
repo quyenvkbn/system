@@ -17,6 +17,12 @@
         "jeroennoten/laravel-adminlte": "^3.3",
         "spatie/laravel-permission": "^3.13"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://localhost/packages.json"
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "^8.0",
         "mockery/mockery": "^1.1",
