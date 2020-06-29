@@ -11,12 +11,12 @@ use Auth;
 class SystemController extends Controller
 {
     function __construct(){
-        // $this->middleware('permission:system-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:system-edit', ['only' => ['edit','update']]);
     }
 
     public function edit($id){
     	$system = System::pluck('content_'.session('locale'), 'keyword')->all();
-        return  view('quyenvkbn::update', ['system' => get_value_system($system, config('system'), session('locale'))]);
+        return  view('quyenvkbn::system.update', ['system' => get_value_system($system, config('system'), session('locale'))]);
     }
 
     /**

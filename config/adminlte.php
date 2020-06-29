@@ -297,16 +297,25 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'Hệ thống'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text'       => 'Hệ thống',
+            'icon_color' => 'fas fa-windows',
+            'url' => '/system',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text'       => 'Quản lý người dùng',
+            'icon_color' => 'fas fa-user-tag',
+            'submenu' => [
+                [
+                    'text' => 'Vai trò',
+                    'url'  => '/role',
+                ],
+                [
+                    'text' => 'Thành viên',
+                    'url'  => '/user',
+                ],
+            ]
         ],
         [
             'text'       => 'information',

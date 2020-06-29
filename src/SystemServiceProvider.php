@@ -20,6 +20,7 @@ class SystemServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(AuthServiceProvider::class);
         
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
