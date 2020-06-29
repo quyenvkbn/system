@@ -1,5 +1,20 @@
 <?php
 
+if(!function_exists('UpdateCKFinderUserRole')){
+    function UpdateCKFinderUserRole($user){
+        if (session_id() == '') {
+            @session_start();
+        }
+        if ($user->can('ckfinder-admin')) {
+            $_SESSION['CKFinder_UserRole'] = 'admin';
+        }elseif($user->can('ckfinder-user')){
+            $_SESSION['CKFinder_UserRole'] = 'user';
+        }else{
+            $_SESSION['CKFinder_UserRole'] = 'default';
+        }
+    }
+}
+
 if(!function_exists('get_value_system')){
     function get_value_system($system_data, $system_config, $local = 'vi'){
         $temp = null;
