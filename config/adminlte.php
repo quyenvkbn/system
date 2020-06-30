@@ -300,12 +300,12 @@ return [
         ['header' => 'Hệ thống'],
         [
             'text'       => 'Hệ thống',
-            'icon_color' => 'fas fa-windows',
-            'url' => '/system',
+            'icon_color' => 'nav-icon fas fa-th',
+            'url' => '/system/1/edit',
         ],
         [
             'text'       => 'Quản lý người dùng',
-            'icon_color' => 'fas fa-user-tag',
+            'icon_color' => 'fas fa-fw fa-user ',
             'submenu' => [
                 [
                     'text' => 'Vai trò',
@@ -316,11 +316,6 @@ return [
                     'url'  => '/user',
                 ],
             ]
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
         ],
     ],
 

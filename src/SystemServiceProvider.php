@@ -14,10 +14,12 @@ class SystemServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'quyenvkbn');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'quyenvkbn');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'quyenvkbn');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+
+        class_alias(config("auth.providers.users.model"), 'Quyenvkbn\System\Models\User');
 
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
@@ -26,6 +28,9 @@ class SystemServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
+
+        
+
     }
 
     /**
@@ -69,6 +74,7 @@ class SystemServiceProvider extends ServiceProvider
             __DIR__.'/../database/seeds' => base_path('database/seeds'),
             __DIR__.'/../resources/views/layout' => base_path('resources/views'),
             __DIR__.'/../middleware' => base_path('app/Http/Middleware'),
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/quyenvkbn'),
         ], 'system.default');
 
         // Publishing the configuration file.

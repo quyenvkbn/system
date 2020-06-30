@@ -185,7 +185,7 @@ App/User
 ## Testing
 
 ``` bash
-
+...
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Traits\HasRoles;
 class User{
@@ -194,6 +194,27 @@ class User{
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
+    }
+}
+
+```
+
+## Contributing
+
+App\Http\Controllers\Auth\LoginController
+
+## Testing
+
+``` bash
+...
+use Illuminate\Http\Request;
+
+class LoginController extends Controller
+{
+    ...
+    protected function authenticated(Request $request, $user)
+    {
+        UpdateCKFinderUserRole($user);
     }
 }
 

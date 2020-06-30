@@ -3,7 +3,7 @@
 namespace Quyenvkbn\System\Policies;
 
 use Spatie\Permission\Models\Role;
-use App\User;
+use Quyenvkbn\System\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class RolePolicy
