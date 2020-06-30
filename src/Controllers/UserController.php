@@ -5,7 +5,7 @@ namespace Quyenvkbn\System\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Quyenvkbn\System\Requests\UserRequest;
-use App\User;
+use Quyenvkbn\System\Models\User;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller

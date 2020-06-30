@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Hệ thống</h1>
+    <h1>@lang('quyenvkbn::system.system')</h1>
 @stop
 
 @section('content')
@@ -30,7 +30,7 @@
 								@foreach($value as $k => $val)
 									<div class="form-group row">
 										<div class="col-md-2">
-								        	<label for="">{{ $val['label'] }}</label>
+								        	<label for="">{{ __($val['label_or_lang']) }}</label>
 								        </div>
 										@switch($val['type'])
 										    @case('dropdown')
@@ -68,7 +68,7 @@
 					@endforeach
 				</div>
 				<div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Xác nhận</button>
+                  <button type="submit" class="btn btn-primary">@lang('quyenvkbn::system.submit')</button>
                 </div>
 		    @endif
 		</form>

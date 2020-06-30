@@ -14,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'Spatie\Permission\Models\Role' => 'Quyenvkbn\System\Policies\RolePolicy',
-        'App\User' => 'Quyenvkbn\System\Policies\UserPolicy',
+        'Quyenvkbn\System\Models\User' => 'Quyenvkbn\System\Policies\UserPolicy',
     ];
 
     /**
@@ -24,6 +24,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
+        $this->policies[config("auth.providers.users.model")] = 'Quyenvkbn\System\Policies\UserPolicy';
+
         $this->registerPolicies();
 
         //

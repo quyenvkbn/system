@@ -38,6 +38,5 @@ class SystemController extends Controller
     		updateBatch('systems', $data_update_and_create['update'], 'keyword', 'content_'.session('locale'));
     	}
         return redirect()->route('system.edit',1);
-        // return \App::call('Quyenvkbn\System\Controllers\SystemController@edit', ['id' => 1]);
     }
 }
