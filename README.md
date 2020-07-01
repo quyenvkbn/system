@@ -5,104 +5,83 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Đây là hệ thống được cài đặt sẵn trang quản trị admin lte trong đó bao gồm quản lý vai trò, thành viên và hệ thống(nơi để config các từ khóa...)
+Hệ thống có sử dụng 3 package và đã bao gồm ckfinder + ckeditor
+1. ckfinder/ckfinder-laravel-package
+2. jeroennoten/Laravel-AdminLTE
+3. spatie/laravel-permission
 
-## Installation
+## Cài đặt
 
-Via Composer
+Thông qua Composer
 
 ``` bash
 $ composer require quyenvkbn/system
 ```
 
-## Usage
-
-Publishes all
-
-## Installation
-
-Via Composer
+Xuất bản các file cần thiết
+config/system.php
+config/ckfinder.php
+config/adminlte.php
+public/js/ckeditor
+public/js/system.js
+database/seeds/UserDatabaseSeeder.php
+database/seeds/SeedFakeAdminUserTableSeeder.php
+resources/views/home.balde.php
+resources/lang/vendor/quyenvkbn
+app/Http/Middleware/CustomCKFinderAuth.php
+app/Http/Middleware/LanguageSwitcher.php
 
 ``` bash
 $ php artisan vendor:publish --tag=system.default --force
 ```
 
-## Usage
-
-## Change log
-
-Generate login / registration scaffolding...
-
-## Testing
+Cài đặt trang login, register...
 
 ``` bash
 $ php artisan ui bootstrap --auth
 ```
 
-## Contributing
-
-## Testing
+Cài đặt các thư viện script cần thiết
 
 ``` bash
 $ npm install
 ```
 
-## Contributing
-
-## Testing
+Biên dịch các thư viên cần thiết vào file public/js/app.css và public/css/app.js
 
 ``` bash
 $ npm run dev
 ```
 
-## Contributing
-
-
-
-## Testing
+Cài đặt adminlte băng lệnh sau
 
 ``` bash
 $ php artisan adminlte:install
 ```
 
-## Contributing
-
-After installing the Laravel package you need to download CKFinder code. It is not shipped with the package due to different license terms. To install it, run the following artisan command:
-
-## Testing
+Bạn cần tải CK Downloader
 
 ``` bash
 $ php artisan ckfinder:download
 ```
 
-## Contributing
-
-Publish the CKFinder connector configuration and assets.
-
-## Testing
+Xuất bản cấu hình và tài sản của trình kết nối CK Downloader
 
 ``` bash
 // --tag=ckfinder-config
 $ php artisan vendor:publish --tag=ckfinder-assets
 ```
 
-## Contributing
-
-Finally, you can publish package's configuration, assets and views using only one command.
-
-## Testing
+Xuất bản cấu hình, tài sản và chế độ xem của ckfinder
 
 ``` bash
-// --tag=ckfinder-config
 $ php artisan vendor:publish --tag=ckfinder
 ```
 
-## Contributing
-
-## Testing
+Theo mặc định Ckfinder sử dụng cơ chế bảo vệ CSRF dựa vào cookie, nên bạn cần thêm tên cookie ckCsrfToken vào thuộc tính $except của app/Http/Middleware/EncryptCookies.php
 
 ``` bash
-// app/Http/Middleware/EncryptCookies.php
 
 namespace App\Http\Middleware;
 
@@ -122,14 +101,9 @@ class EncryptCookies extends Middleware
 }
 ```
 
-## Contributing
-
-
-## Testing
+Bạn cũng nên vô hiệu hóa cơ chế bảo vệ CSRF của Laravel cho đường dẫn của CK Downloader. Điều này có thể được thực hiện bằng cách thêm ckfinder/* vào thuộc tính $except của app/Http/Middleware/VerifyCsrfToken.php
 
 ``` bash
-// app/Http/Middleware/VerifyCsrfToken.php
-
 namespace App\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
@@ -148,31 +122,19 @@ class VerifyCsrfToken extends Middleware
 }
 ```
 
-## Contributing
-
-The new middleware class will appear in app/Http/Middleware/CustomCKFinderAuth.php. Change the authentication option in config/ckfinder.php:
-
-## Testing
+Middleware "app/Http/Middleware/CustomCKFinderAuth.php" nằm trong thư mục app/Http/Middleware khi bạn xuất bản các file cần thiết. Bạn cần thay đổi config authentication trong file config/ckfinder.php
 
 ``` bash
 $config['authentication'] = '\App\Http\Middleware\CustomCKFinderAuth';
 ```
 
-## Contributing
-
-This package publishes a config/permission.php file. If you already have a file by that name, you must rename or remove it.
-
-## Testing
+Xuất bản file config/permission.php
 
 ``` bash
 $ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 ```
 
-## Contributing
-
-create database
-
-## Testing
+Thêm các bảng vào cơ sở dữ liệu
 
 ``` bash
 $ php artisan migrate
@@ -180,9 +142,7 @@ $ php artisan migrate
 
 ## Contributing
 
-App/User
-
-## Testing
+Thêm nội dung sau vào model App/User
 
 ``` bash
 ...
@@ -199,11 +159,7 @@ class User{
 
 ```
 
-## Contributing
-
-App\Http\Controllers\Auth\LoginController
-
-## Testing
+Thêm nội dung sau vào App\Http\Controllers\Auth\LoginController
 
 ``` bash
 ...
@@ -220,21 +176,13 @@ class LoginController extends Controller
 
 ```
 
-## Contributing
-
-dump-autoload
-
-## Testing
+Load lại tất cả các thư viện trong composer để sử dụng 
 
 ``` bash
 $ composer dump-autoload
 ```
 
-## Contributing
-
-create data in database
-
-## Testing
+Thêm dữ liệu mẫu vào cơ sở dữ liệu
 
 ``` bash
 $ php artisan db:seed
@@ -242,11 +190,7 @@ OR
 $ php artisan db:seed --class=UserDatabaseSeeder
 ```
 
-## Contributing
-
-App/Http/Kernel
-
-## Testing
+Đăng ký thêm các middleware tròng file App/Http/Kernel
 
 ``` bash
 protected $routeMiddleware = [
@@ -260,12 +204,6 @@ protected $routeMiddleware = [
 ## Contributing
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
 
 ## Contributing
 
