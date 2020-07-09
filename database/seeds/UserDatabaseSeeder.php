@@ -28,6 +28,48 @@ class UserDatabaseSeeder extends Seeder
            'user-delete',
            'user-all',
 
+           'post-list',
+           'post-create',
+           'post-edit',
+           'post-delete',
+           'post-all',
+           
+           'post-category-list',
+           'post-category-create',
+           'post-category-edit',
+           'post-category-delete',
+           'post-category-all',
+
+           'menu-list',
+           'menu-create',
+           'menu-edit',
+           'menu-delete',
+           'menu-all',
+           
+           'menu-category-list',
+           'menu-category-create',
+           'menu-category-edit',
+           'menu-category-delete',
+           'menu-category-all',
+           
+           'slide-category-list',
+           'slide-category-create',
+           'slide-category-edit',
+           'slide-category-delete',
+           'slide-category-all',
+
+           'tag-list',
+           'tag-create',
+           'tag-edit',
+           'tag-delete',
+           'tag-all',
+
+           'comment-list',
+           'comment-create',
+           'comment-edit',
+           'comment-delete',
+           'comment-all',
+
            'system-edit',
            'ckfinder-admin',
            'ckfinder-user'

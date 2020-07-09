@@ -30,7 +30,7 @@
 								@foreach($value as $k => $val)
 									<div class="form-group row">
 										<div class="col-md-2">
-								        	<label for="">{{ __($val['label_or_lang']) }}</label>
+								        	<label for="">@lang('quyenvkbn::system.'.$val['label_or_lang'])</label>
 								        </div>
 										@switch($val['type'])
 										    @case('dropdown')

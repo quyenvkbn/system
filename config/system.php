@@ -2,20 +2,14 @@
 
 return [
 	'homepage' => [
-		'brandname' => array('type' => 'text', 'label_or_lang' => 'custom.brand_name'),
+		'brandname' => array('type' => 'text', 'label_or_lang' => 'brandname'),
 
-		'company' => array('type' => 'text', 'label_or_lang' => 'Tên công ty'),
+		'company' => array('type' => 'text', 'label_or_lang' => 'company'),
 
-		'shipping' => array('type' => 'text', 'label_or_lang' => 'Phí ship'),
+		'logo' => array('type' => 'image', 'label_or_lang' => 'logo'),
 
-		'logo' => array('type' => 'image', 'label_or_lang' => 'Logo'),
-
-		'slogan' => array('type' => 'image', 'label_or_lang' => 'Logo Chân Trang'),
-
-		'description' => array('type' => 'textarea', 'label_or_lang' => 'Mô tả'),
+		'description' => array('type' => 'textarea', 'label_or_lang' => 'description'),
 
 		'content' => array('type' => 'editor', 'label_or_lang' => 'Nội dung'),
-
-		'banner' => array('type' => 'image', 'label_or_lang' => 'Banner nhận giảm giá đăng ký Email'),
 	]
 ];

@@ -92,7 +92,7 @@ class RoleController extends Controller
             ->where("role_has_permissions.role_id",$role->id)->pluck('id')
             ->all();
         }
-        return  view('quyenvkbn::role.update', ['role' => $role, 'permission' => Permission::get()]);
+        return  view('quyenvkbn::role.edit', ['role' => $role, 'permission' => Permission::get()]);
     }
 
 
