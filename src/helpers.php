@@ -15,6 +15,31 @@ if(!function_exists('UpdateCKFinderUserRole')){
     }
 }
 
+if(!function_exists('traverse')){
+    function traverse($categories, $prefix = '-', &$traverse = array(), $not_id = 0, $column = 'title'){
+        foreach ($categories as $category) {
+            if ($category->id == $not_id) continue;
+            $traverse[$category->id] = PHP_EOL.$prefix.' '.$category->{$column};
+            traverse($category->children, $prefix.'|------', $traverse, $not_id, $column);
+        }
+    }
+}
+
+if(!function_exists('getSlide')){
+    function getSlide($slides, $columns = array('image', 'url', 'title', 'description','publish', 'order')){
+        $slides_data = array();
+        if (!empty($slides)) {
+            foreach ($slides as $key => $slide) {
+                foreach ($columns as $k => $column) {
+                    $slides_data[$column][$key] = $slide->{$column};
+                }
+            }
+        }
+            
+        return $slides_data;
+    }
+}
+
 if(!function_exists('get_value_system')){
     function get_value_system($system_data, $system_config, $local = 'vi'){
         $temp = null;

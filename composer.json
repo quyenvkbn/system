@@ -17,7 +17,8 @@
         "laravel/ui": "^2.0",
         "ckfinder/ckfinder-laravel-package": "v3.5.1.4",
         "jeroennoten/laravel-adminlte": "^3.3",
-        "spatie/laravel-permission": "^3.13"
+        "spatie/laravel-permission": "^3.13",
+        "kalnoy/nestedset": "^5.0"
     },
     "repositories": [
         {

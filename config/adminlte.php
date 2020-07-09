@@ -450,10 +450,21 @@ return [
                     'asset' => false,
                     'location' => '/js/ckeditor/ckeditor.js',
                 ],
+            ],
+        ],
+        [
+            'name' => 'System',
+            'active' => true,
+            'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '/js/system.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/css/system.css',
                 ],
             ],
         ],

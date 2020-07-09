@@ -3,20 +3,22 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>@lang('quyenvkbn::system.role')</h1>
+    <h1>@lang('quyenvkbn::system.update_role')</h1>
 @stop
 
 @section('content')
    	<div class="card">
-   		<form class="form-horizontal"  action="{{ route('role.store') }}" enctype="multipart/form-data" method="post">
+   		<form class="form-horizontal"  action="{{ route('role.update', ['role' => $role->id]) }}" enctype="multipart/form-data" method="post">
    			@csrf
+			@method('PATCH')
 			<div class="card-body">
 				<div class="form-group row">
 					<div class="col-md-2">
 			        	<label for="">@lang('quyenvkbn::system.name')</label>
 			        </div>
 			        <div class="col-md-10">
-			        	<input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Tên" class="form-control @error('name') is-invalid @enderror">
+			        	<input id="name" type="text" name="name" value="{{ old('name', $role->name) }}" class="form-control @error('name') is-invalid @enderror">
+			        	<input id="id" type="hidden" name="id" value="{{ $role->id }}">
 			        	@error('name')
 						    <div class="alert alert-danger">{{ $message }}</div>
 						@enderror
@@ -29,7 +31,7 @@
 			        <div class="col-md-10">
 			        	@if($permission)
 				        	@php
-				        		$post_permission = (array)old('permission');
+				        		$post_permission = (array)old('permission', $role->permission);
 				        	@endphp
 							<div class="row">
 								@foreach($permission as $key => $value)

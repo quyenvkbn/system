@@ -3,13 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Vai trò</h1>
+    <h1>@lang('quyenvkbn::system.role')</h1>
 @stop
 
 @section('content')
    	<div class="card">
    		<div class="card-header">
-            <h3 class="card-title"><a href="{{ route('role.create') }}" class="btn-sm btn-success"><i class="fas fa-plus-square"></i>&nbsp; Thêm mới</a></h3>
+            <h3 class="card-title"><a href="{{ route('role.create') }}" class="btn-sm btn-success"><i class="fas fa-plus-square"></i>&nbsp; @lang('quyenvkbn::system.create')</a></h3>
 
             <div class="card-tools">
               <div class="input-group input-group-sm" style="width: 150px;">
@@ -26,8 +26,8 @@
         		<thead>
         			<tr>
                 	<th>ID</th>
-                	<th>Name</th>
-                	<th style="width: 160px;">Action</th>
+                	<th>@lang('quyenvkbn::system.name')</th>
+                	<th style="width: 160px;">@lang('quyenvkbn::system.action')</th>
               </tr>
         		</thead>
         		<tbody>
@@ -41,16 +41,16 @@
                   			@csrf
     										@method('DELETE')
     										<div class="btn-group" role="group" aria-label="Basic example">
-    										  	<a href="{{ route('role.show', ['role' => $item->id]) }}" type="button" class="btn btn-secondary" title="Xem"><i class="fas fa-fw fa-eye "></i></a>
-    										  	<a href="{{ route('role.edit', ['role' => $item->id]) }}" type="button" class="btn btn-secondary" title="Sửa"><i class="fas fa-fw fa-edit "></i></a>
-    										  	<button type="submit" class="btn btn-secondary" title="Xóa"><i class="fas fa-fw fa-trash "></i></button>
+    										  	<a href="{{ route('role.show', ['role' => $item->id]) }}" type="button" class="btn btn-secondary" title="@lang('quyenvkbn::system.read')"><i class="fas fa-fw fa-eye "></i></a>
+    										  	<a href="{{ route('role.edit', ['role' => $item->id]) }}" type="button" class="btn btn-secondary" title="@lang('quyenvkbn::system.update')"><i class="fas fa-fw fa-edit "></i></a>
+    										  	<button type="submit" class="btn btn-secondary" title="@lang('quyenvkbn::system.delete')"><i class="fas fa-fw fa-trash "></i></button>
     										</div>
     									</form>
                   	</td>
                   </tr>
 	        			@endforeach
 	        		@else
-	        			<tr><td colspan="3">Dữ liệu đang cập nhật</td></tr>
+	        			<tr><td colspan="3">@lang('quyenvkbn::system.the_data_is_updating')</td></tr>
         			@endif
         		</tbody>
         	</table>

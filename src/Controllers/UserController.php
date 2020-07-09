@@ -77,7 +77,7 @@ class UserController extends Controller
     	if ($user->roles) {
     		$user->rolesUser = $user->roles->pluck('id')->all();
     	}
-        return  view('quyenvkbn::user.update', ['roles' => $roles, 'user' => $user]);
+        return  view('quyenvkbn::user.edit', ['roles' => $roles, 'user' => $user]);
     }
 
     /**

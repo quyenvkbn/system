@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Chi tiết thành viên</h1>
+    <h1>@lang('quyenvkbn::system.detail_member')</h1>
 @stop
 
 @section('content')
