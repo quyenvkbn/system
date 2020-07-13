@@ -39,4 +39,12 @@ return [
     'homepage_data'             => [
         'Hidden', 'Show'
     ],
+    'meta_title'                => 'Title SEO',
+    'meta_keyword'              => 'Keyword SEO',
+    'meta_description'          => 'Description SEO',
+    'meta_image'                => 'Image SEO',
+    'script_head'               => 'Script head',
+    'script_body'               => 'Script body',
+    'user_management'           => 'User management',
+    'select_article'            => 'Select article',
 ];

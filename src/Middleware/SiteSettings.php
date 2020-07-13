@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Quyenvkbn\System\Middleware;
 
 use Closure;
-use Session;
-use App;
-use Config;
+use View;
+use Quyenvkbn\System\Models\System;
 
-class LanguageSwitcher
+class SiteSettings
 {
     /**
      * Handle an incoming request.
@@ -18,12 +17,8 @@ class LanguageSwitcher
      */
     public function handle($request, Closure $next)
     {
-        if (!Session::has('locale'))
-        {
-            Session::put('locale', Config::get('app.locale'));
-            Session::save();
-        }
-        App::setLocale(session('locale'));
+        $site_settings = System::get()->pluck('content_'.session('locale'),'keyword');
+        View::share('site_settings', $site_settings);
         return $next($request);
     }
 }

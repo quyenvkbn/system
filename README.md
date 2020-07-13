@@ -6,11 +6,12 @@
 [![StyleCI][ico-styleci]][link-styleci]
 
 Đây là hệ thống được cài đặt sẵn trang quản trị admin lte trong đó bao gồm quản lý vai trò, thành viên và hệ thống(nơi để config các từ khóa...)
-Hệ thống có sử dụng 3 package và đã bao gồm ckfinder + ckeditor
+Hệ thống có sử dụng 5 package và đã bao gồm ckfinder + ckeditor
 1. ckfinder/ckfinder-laravel-package
 2. jeroennoten/Laravel-AdminLTE
 3. spatie/laravel-permission
-
+4. laravel/ui
+5. kalnoy/nestedset
 ## Cài đặt
 
 Thông qua Composer
@@ -20,6 +21,7 @@ $ composer require quyenvkbn/system
 ```
 
 Xuất bản các file cần thiết
+``` bash
 config/system.php
 config/ckfinder.php
 config/adminlte.php
@@ -29,10 +31,7 @@ database/seeds/UserDatabaseSeeder.php
 database/seeds/SeedFakeAdminUserTableSeeder.php
 resources/views/home.balde.php
 resources/lang/vendor/quyenvkbn
-app/Http/Middleware/CustomCKFinderAuth.php
-app/Http/Middleware/LanguageSwitcher.php
 
-``` bash
 $ php artisan vendor:publish --tag=system.default --force
 ```
 
@@ -122,12 +121,6 @@ class VerifyCsrfToken extends Middleware
 }
 ```
 
-Middleware "app/Http/Middleware/CustomCKFinderAuth.php" nằm trong thư mục app/Http/Middleware khi bạn xuất bản các file cần thiết. Bạn cần thay đổi config authentication trong file config/ckfinder.php
-
-``` bash
-$config['authentication'] = '\App\Http\Middleware\CustomCKFinderAuth';
-```
-
 Xuất bản file config/permission.php
 
 ``` bash
@@ -190,16 +183,17 @@ OR
 $ php artisan db:seed --class=UserDatabaseSeeder
 ```
 
-Đăng ký thêm các middleware tròng file App/Http/Kernel
+Đăng ký thêm các alias middleware trong file App/Http/Kernel
 
 ``` bash
 protected $routeMiddleware = [
-    ...
-    'language' => \App\Http\Middleware\LanguageSwitcher::class,   
+    ... 
     'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
     'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
 ]
 ```
+
+Bạn có biến $site_settings trong View blade khi router sử dụng Middleware site_settings đây là danh sách các config của hệ thống
 
 ## Contributing
 

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Router extends Model
 {
     protected $fillable = [
-        'canonical','table', 'module_id'
+        'canonical', 'routerable_type', 'routerable_id', 'routerable_action'
     ];
 }

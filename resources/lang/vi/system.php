@@ -39,4 +39,12 @@ return [
     'homepage_data'             => [
         'Không hiển thị', 'Hiển thị'
     ],
+    'meta_title'                => 'Tiêu đề SEO',
+    'meta_keyword'              => 'Từ khóa SEO',
+    'meta_description'          => 'Mô tả SEO',
+    'meta_image'                => 'Hình ảnh SEO',
+    'script_head'               => 'Script head',
+    'script_body'               => 'Script body',
+    'user_management'           => 'Quản lý người dùng',
+    'select_article'            => 'Chọn tin tức',
 ];

@@ -75,3 +75,9 @@
 .d-contents{
 	display: contents;
 }
+.bd-1{
+	border:1px solid #eee;
+}
+.p-10{
+	padding:10px;
+}
