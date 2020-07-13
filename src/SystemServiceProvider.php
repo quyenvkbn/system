@@ -4,6 +4,8 @@ namespace Quyenvkbn\System;
 
 use Illuminate\Support\ServiceProvider;
 use Quyenvkbn\System\RouteServiceProvider;
+use Illuminate\Contracts\Events\Dispatcher;
+use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 
 class SystemServiceProvider extends ServiceProvider
 {
@@ -12,12 +14,46 @@ class SystemServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Dispatcher $events)
     {
+        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+            $event->menu->add([
+                'key' => 'modules',
+                'header' => 'Modules',
+            ]);
+            $event->menu->add([
+                'key' => 'system_settings',
+                'header' => __('quyenvkbn::system.system'),
+            ]);
+
+            $event->menu->addAfter('system_settings', [
+                'text'       => __('quyenvkbn::system.user_management'),
+                'icon_color' => 'fas fa-fw fa-user ',
+                'can'  => ['role-list','user-list'],
+                'submenu' => [
+                    [
+                        'text' => __('quyenvkbn::system.role'),
+                        'url'  => 'admin/role',
+                        'can'  => 'role-list'
+                    ],
+                    [
+                        'text' => __('quyenvkbn::system.member'),
+                        'url'  => 'admin/user',
+                        'can'  => 'user-list'
+                    ],
+                ]
+            ]);
+            $event->menu->addAfter('system_settings', [
+                'text'       => __('quyenvkbn::system.system'),
+                'icon_color' => 'nav-icon fas fa-th',
+                'url' => 'admin/system/1/edit',
+                'can'  => 'system-edit'
+            ]);
+        });
+
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'quyenvkbn');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'quyenvkbn');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/Routes/web.php');
 
         if(!class_exists('Quyenvkbn\System\Models\User')){
             class_alias(config("auth.providers.users.model"), 'Quyenvkbn\System\Models\User');
@@ -31,8 +67,6 @@ class SystemServiceProvider extends ServiceProvider
             $this->bootForConsole();
         }
 
-        
-
     }
 
     /**
@@ -43,7 +77,7 @@ class SystemServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/system.php', 'system');
-
+        
         // Register the service the package provides.
         $this->app->singleton('system', function ($app) {
             return new System;
@@ -76,31 +110,7 @@ class SystemServiceProvider extends ServiceProvider
             __DIR__.'/../resources/assets/css' => public_path('css'),
             __DIR__.'/../database/seeds' => base_path('database/seeds'),
             __DIR__.'/../resources/views/layout' => base_path('resources/views'),
-            __DIR__.'/../middleware' => base_path('app/Http/Middleware'),
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/quyenvkbn'),
         ], 'system.default');
-
-        // Publishing the configuration file.
-        /*$this->publishes([
-            __DIR__.'/../config/system.php' => config_path('system.php'),
-        ], 'system.config');*/
-
-        // Publishing the views.
-        /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/quyenvkbn'),
-        ], 'system.views');*/
-
-        // Publishing seeds.
-        /*$this->publishes([
-            __DIR__.'/../database/seeds' => base_path('database/seeds'),
-        ], 'system.seeds');*/
-
-        // Publishing the translation files.
-        /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/quyenvkbn'),
-        ], 'system.views');*/
-
-        // Registering package commands.
-        // $this->commands([]);
     }
 }

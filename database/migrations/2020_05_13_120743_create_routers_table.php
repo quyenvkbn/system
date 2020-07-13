@@ -16,8 +16,9 @@ class CreateRoutersTable extends Migration
         Schema::create('routers', function (Blueprint $table) {
             $table->id();
             $table->string('canonical')->unique();
-            $table->bigInteger('module_id');
-            $table->string('table');
+            $table->bigInteger('routerable_id');
+            $table->string('routerable_action');
+            $table->string('routerable_type');
             $table->timestamps();
         });
     }

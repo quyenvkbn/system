@@ -49,7 +49,7 @@ if(!function_exists('get_value_system')){
                     foreach ($value as $k => $val) {
                         $temp[$key][$key.'_'.$k] = $val;
                         if ($val['type'] == 'dropdown' && !isset($val['data']) && isset($val['table'])) {
-                            $temp[$key][$key.'_'.$k]['data'] = \DB::table($val['table'])->select('id','title')->whereNull('deleted_at')->where('alanguage', $local)->get();
+                            $temp[$key][$key.'_'.$k]['data'] = $val['table']::select('id','title')->whereNull('deleted_at')->where('alanguage', $local)->get();
                             $temp[$key][$key.'_'.$k]['value'] = isset($system_data[$key.'_'.$k]) ? (int)$system_data[$key.'_'.$k] : '';
                         }else{
                             $temp[$key][$key.'_'.$k]['value'] = isset($system_data[$key.'_'.$k]) ? $system_data[$key.'_'.$k] : '';
@@ -98,5 +98,31 @@ if(!function_exists('updateBatch')){
         $keys = implode(',', $keys);
         $cases = implode(' ', $cases);
         return \DB::update("UPDATE `{$table}` SET `{$columnUpdate}` = CASE `{$key}` {$cases} END WHERE `{$key}` IN({$keys})", $params);
+    }
+}
+
+if(!function_exists('rewrite_url')){
+    function rewrite_url($canonical = '', $slug = '', $id = 0, $modules = '', $suffix = TRUE, $fulllink = FALSE){
+        $domain = ($fulllink == TRUE)?url('/'):'';
+        $mod = '';
+        /*if(in_array($modules, array('articles_tags'))){
+            $mod = 'tags/';
+        }*/
+        if(!empty($canonical)){
+            return ($suffix == TRUE)?($domain.$mod.$canonical.env('QVSUFFIX', '.html')):($domain.$mod.$canonical);
+        }
+
+        $id = ($id == 0)?'':$id;
+        switch(strtolower($modules)){
+            case 'attribute_categories':    $link = $domain.$slug.'-attc'.$id;  break;
+            case 'attribute':               $link = $domain.$slug.'-att'.$id;   break;
+            case 'article_categories':      $link = $domain.$slug.'-ac'.$id;    break;
+            case 'article':                 $link = $domain.$slug.'-a'.$id;     break;
+            case 'product_categories':      $link = $domain.$slug.'-pc'.$id;    break;
+            case 'product':                 $link = $domain.$slug.'-p'.$id;     break;
+            case 'tag':                     $link = $domain.$slug.'-t'.$id;     break;
+            default:                        $link = $domain.'error-404';
+        }
+        return ($suffix == TRUE)?($link.env('QVSUFFIX', '.html')):$link;
     }
 }

@@ -25,7 +25,7 @@ $config = array();
 
 $config['loadRoutes'] = true;
 
-$config['authentication'] = '\App\Http\Middleware\CustomCKFinderAuth';
+$config['authentication'] = '\Quyenvkbn\System\Middleware\CustomCKFinderAuth';
 
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey

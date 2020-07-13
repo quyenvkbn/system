@@ -23,9 +23,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
+        Route::pattern('extension', '(?:.html)?');
         parent::boot();
+
+        Route::aliasMiddleware('language', 'Quyenvkbn\System\Middleware\LanguageSwitcher');
+        Route::aliasMiddleware('site_settings', 'Quyenvkbn\System\Middleware\SiteSettings');
     }
 
     /**
@@ -36,7 +38,6 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         //$this->mapApiRoutes();
-
         $this->mapWebRoutes();
 
         //

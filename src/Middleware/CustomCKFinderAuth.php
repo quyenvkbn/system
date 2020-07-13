@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Quyenvkbn\System\Middleware;
 
 use Closure;
 use Auth;

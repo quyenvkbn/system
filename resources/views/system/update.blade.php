@@ -25,7 +25,7 @@
 				@php $i = 0; @endphp
 				<div class="tab-content" id="nav-tabContent">
 					@foreach($system as $key => $value)
-						<div class="tab-pane card-body fade show {{ $i == 0 ? 'active' : '' }}" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<div class="tab-pane card-body fade show {{ $i == 0 ? 'active' : '' }}" id="nav-{{ $key }}" role="tabpanel" aria-labelledby="nav-{{ $key }}-tab">
 							@if($value)
 								@foreach($value as $k => $val)
 									<div class="form-group row">
@@ -34,7 +34,20 @@
 								        </div>
 										@switch($val['type'])
 										    @case('dropdown')
-										        	Dropdown
+											    <div class="col-md-10">
+											        <select name="" id="" class="form-control">
+											        	@if(!empty($val['first_select']))
+															<option value="0">
+																{{ $val['first_select'] }}
+															</option>
+											        	@endif
+														@foreach($val['data'] as $ks => $vals)
+															<option value="{{ $vals->id }}">
+																{{ $vals->title }}
+															</option>
+														@endforeach
+											        </select>
+											    </div>
 										        @break
 
 										    @case('textarea')
