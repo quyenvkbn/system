@@ -118,5 +118,6 @@ class UserDatabaseSeeder extends Seeder
         }
         
         $this->call(SeedFakeAdminUserTableSeeder::class);
+        $this->call(SystemDatabaseSeeder::class);
     }
 }
