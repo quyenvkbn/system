@@ -15,7 +15,7 @@ class SystemDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $system = get_value_system(array(), config('system'), session('locale'))
+        $system = get_value_system(array(), config('system'), session('locale'));
         if (!empty($system)) {
             $data_system = array();
             foreach ($system as $key => $value) {
@@ -23,7 +23,7 @@ class SystemDatabaseSeeder extends Seeder
                     foreach ($value as $k => $val) {
                         $data_system[] = [
                             'keyword' => $k
-                        ]
+                        ];
                     }
                 }
             }
