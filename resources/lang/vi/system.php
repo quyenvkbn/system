@@ -47,4 +47,5 @@ return [
     'script_body'               => 'Script body',
     'user_management'           => 'Quản lý người dùng',
     'select_article'            => 'Chọn tin tức',
+    'name_module'               => 'Tên module',
 ];

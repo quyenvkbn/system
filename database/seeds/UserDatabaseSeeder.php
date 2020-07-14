@@ -40,6 +40,30 @@ class UserDatabaseSeeder extends Seeder
            'post-category-delete',
            'post-category-all',
 
+           'product-list',
+           'product-create',
+           'product-edit',
+           'product-delete',
+           'product-all',
+           
+           'product-category-list',
+           'product-category-create',
+           'product-category-edit',
+           'product-category-delete',
+           'product-category-all',
+
+           'attribute-list',
+           'attribute-create',
+           'attribute-edit',
+           'attribute-delete',
+           'attribute-all',
+           
+           'attribute-category-list',
+           'attribute-category-create',
+           'attribute-category-edit',
+           'attribute-category-delete',
+           'attribute-category-all',
+
            'menu-list',
            'menu-create',
            'menu-edit',
@@ -69,6 +93,20 @@ class UserDatabaseSeeder extends Seeder
            'comment-edit',
            'comment-delete',
            'comment-all',
+
+           'contact-list',
+           'contact-create',
+           'contact-edit',
+           'contact-delete',
+           'contact-all',
+
+           
+           'module-list',
+           'module-edit',
+
+           'file-list',
+           'file-create',
+           'file-delete',
 
            'system-edit',
            'ckfinder-admin',

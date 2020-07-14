@@ -47,4 +47,5 @@ return [
     'script_body'               => 'Script body',
     'user_management'           => 'User management',
     'select_article'            => 'Select article',
+    'name_module'               => 'Module name',
 ];
