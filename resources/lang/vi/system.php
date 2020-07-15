@@ -13,6 +13,7 @@ return [
 
 	'create'                	=> 'Thêm mới',
     'name'                		=> 'Họ và tên',
+    'role_name'                 => 'Tên vai trò',
     'password'                	=> 'Mật khẩu',
     'action'                	=> 'Thao tác',
     'the_data_is_updating'     	=> 'Dữ liệu đang cập nhật',
@@ -48,4 +49,7 @@ return [
     'user_management'           => 'Quản lý người dùng',
     'select_article'            => 'Chọn tin tức',
     'name_module'               => 'Tên module',
+    'language'                  => 'Ngôn ngữ',
+    'search'                    => 'Tìm kiếm',
+    'email'                     => 'Email',
 ];

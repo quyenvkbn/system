@@ -26,7 +26,7 @@
 		        </div>
 				<div class="form-group row">
 					<div class="col-md-2">
-			        	<label for="">Email</label>
+			        	<label for="">@lang('quyenvkbn::system.email')</label>
 			        </div>
 			        <div class="col-md-10">
 			        	<input id="email" readonly="" type="text" value="{{ $user->email }}" class="form-control">

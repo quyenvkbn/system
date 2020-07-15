@@ -24,10 +24,10 @@
 		        </div>
 				<div class="form-group row">
 					<div class="col-md-2">
-			        	<label for="">Email</label>
+			        	<label for="">@lang('quyenvkbn::system.email')</label>
 			        </div>
 			        <div class="col-md-10">
-			        	<input id="email" type="text" name="email" value="{{ old('email') }}" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
+			        	<input id="email" type="text" name="email" value="{{ old('email') }}" placeholder="@lang('quyenvkbn::system.email')" class="form-control @error('email') is-invalid @enderror">
 			        	@error('email')
 						    <div class="alert alert-danger">{{ $message }}</div>
 						@enderror

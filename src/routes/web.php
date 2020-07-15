@@ -13,5 +13,11 @@ Route::group(['middleware' => 'language'], function () {
 			Route::resource('/system', 'SystemController', ['only' => ['edit', 'update']]);
 		});
 	});
+	Route::get('set-language/{locale}', function($locale){
+        Session::put('locale', $locale);
+        Session::save();
+        return back()->withInput();
+	});
+
 	Route::get('{canonical}{extension}', 'RouterController@index');
 });

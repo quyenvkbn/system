@@ -81,6 +81,7 @@
 .p-10{
 	padding:10px;
 }
+
 .custom-input-file::-webkit-file-upload-button {
-  visibility: hidden;
+  height: 25px;line-height: 20px;
 }

@@ -12,7 +12,8 @@ return [
     'brandname'                	=> 'Brandname',
 
 	'create'                	=> 'Create',
-    'name'                		=> 'Name',
+    'name'                      => 'Name',
+    'role_name'                	=> 'Role name',
     'password'                	=> 'Password',
     'action'                	=> 'Action',
     'the_data_is_updating'     	=> 'The data is updating',
@@ -48,4 +49,7 @@ return [
     'user_management'           => 'User management',
     'select_article'            => 'Select article',
     'name_module'               => 'Module name',
+    'language'                  => 'Language',
+    'search'                    => 'Search',
+    'email'                     => 'Email',
 ];

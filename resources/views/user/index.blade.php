@@ -12,13 +12,15 @@
             <h3 class="card-title"><a href="{{ route('user.create') }}" class="btn-sm btn-success"><i class="fas fa-plus-square"></i>&nbsp; @lang('quyenvkbn::system.create')</a></h3>
 
             <div class="card-tools">
-              <div class="input-group input-group-sm" style="width: 150px;">
-                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+              <form action="" method="get">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="name" value="{{ request()->name }}" class="form-control float-right" placeholder="@lang('quyenvkbn::system.search')">
 
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
         </div>
         <div class="card-body table-responsive p-0">
@@ -27,7 +29,7 @@
         			<tr>
                 	<th>ID</th>
                   <th>@lang('quyenvkbn::system.name')</th>
-                	<th>Email</th>
+                	<th>@lang('quyenvkbn::system.email')</th>
                 	<th style="width: 160px;">@lang('quyenvkbn::system.action')</th>
               </tr>
         		</thead>
@@ -52,7 +54,7 @@
                   </tr>
 	        			@endforeach
 	        		@else
-	        			<tr><td colspan="3">@lang('quyenvkbn::system.the_data_is_updating')</td></tr>
+	        			<tr><td colspan="4">@lang('quyenvkbn::system.the_data_is_updating')</td></tr>
         			@endif
         		</tbody>
         	</table>
