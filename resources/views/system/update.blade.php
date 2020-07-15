@@ -30,19 +30,22 @@
 								@foreach($value as $k => $val)
 									<div class="form-group row">
 										<div class="col-md-2">
-								        	<label for="">@lang('quyenvkbn::system.'.$val['label_or_lang'])</label>
+												<label for="">
+													{{ Lang::has('quyenvkbn::system.'.$val['label_or_lang']) ? __('quyenvkbn::system.'.$val['label_or_lang']) : $val['label_or_lang'] }}
+												</label>
+								        	
 								        </div>
 										@switch($val['type'])
 										    @case('dropdown')
 											    <div class="col-md-10">
-											        <select name="" id="" class="form-control">
+											        <select name="{{ $k }}" id="" class="form-control">
 											        	@if(!empty($val['first_select']))
 															<option value="0">
 																{{ $val['first_select'] }}
 															</option>
 											        	@endif
 														@foreach($val['data'] as $ks => $vals)
-															<option value="{{ $vals->id }}">
+															<option data-value="{{$val['value']}}" value="{{ $vals->id }}" {{ $vals->id == $val['value'] ? 'selected' : '' }}>
 																{{ $vals->title }}
 															</option>
 														@endforeach

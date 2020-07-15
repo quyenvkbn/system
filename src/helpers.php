@@ -49,7 +49,11 @@ if(!function_exists('get_value_system')){
                     foreach ($value as $k => $val) {
                         $temp[$key][$key.'_'.$k] = $val;
                         if ($val['type'] == 'dropdown' && !isset($val['data']) && isset($val['table'])) {
-                            $temp[$key][$key.'_'.$k]['data'] = $val['table']::select('id','title')->whereNull('deleted_at')->where('alanguage', $local)->get();
+                            $temp[$key][$key.'_'.$k]['data'] = $val['table']::select('id','title');
+                            if ($val['deleted_at']) {
+                                $temp[$key][$key.'_'.$k]['data'] = $temp[$key][$key.'_'.$k]['data']->whereNull('deleted_at');
+                            }
+                            $temp[$key][$key.'_'.$k]['data'] = $temp[$key][$key.'_'.$k]['data']->where('alanguage', $local)->get();
                             $temp[$key][$key.'_'.$k]['value'] = isset($system_data[$key.'_'.$k]) ? (int)$system_data[$key.'_'.$k] : '';
                         }else{
                             $temp[$key][$key.'_'.$k]['value'] = isset($system_data[$key.'_'.$k]) ? $system_data[$key.'_'.$k] : '';
