@@ -17,6 +17,23 @@ class SystemServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events)
     {
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+
+            $event->menu->add([
+                'key' => 'language',
+                'text' => __('quyenvkbn::system.language').' - '.app()->getLocale(), 
+                'topnav_right' => true,
+                'submenu' => [
+                    [
+                        'text' => 'Vietnam',
+                        'url'  => 'set-language/vi',
+                    ],
+                    [
+                        'text' => 'English',
+                        'url'  => 'set-language/en',
+                    ],
+                ]
+            ]);
+
             $event->menu->add([
                 'key' => 'modules',
                 'header' => 'Modules',

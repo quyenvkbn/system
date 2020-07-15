@@ -18,9 +18,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return  view('quyenvkbn::user.index', ['users' => User::paginate(10)]);
+        $users = User::orderBy('id','DESC');
+        if ($request->name) {
+            $users->where('name', 'like', "%".$request->name."%");
+        }
+        return  view('quyenvkbn::user.index', ['users' => $users->paginate(10)]);
     }
 
     /**
