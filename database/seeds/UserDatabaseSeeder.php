@@ -99,7 +99,12 @@ class UserDatabaseSeeder extends Seeder
            'contact-edit',
            'contact-delete',
            'contact-all',
-
+           
+           'mailsubricre-list',
+           'mailsubricre-create',
+           'mailsubricre-edit',
+           'mailsubricre-delete',
+           'mailsubricre-all',
            
            'module-list',
            'module-edit',
