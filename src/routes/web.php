@@ -18,6 +18,7 @@ Route::group(['middleware' => 'language'], function () {
         Session::save();
         return back()->withInput();
 	});
-
-	Route::get('{canonical}{extension}', 'RouterController@index');
+	Route::group(['middleware' => 'site_settings'], function () {
+		Route::get('{canonical}{extension}', 'RouterController@index');
+	});
 });

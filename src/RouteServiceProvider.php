@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::pattern('extension', '(?:.html)?');
+        Route::pattern('extension', '(?:'.env('QVSUFFIX', '.html').')?');
         parent::boot();
 
         Route::aliasMiddleware('language', 'Quyenvkbn\System\Middleware\LanguageSwitcher');

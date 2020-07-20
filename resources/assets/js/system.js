@@ -200,3 +200,7 @@ function removeSlide(id){
         $(slides[i]).find('> div.modal').attr('id', 'exampleModal'+i);
     }
 }
+
+$('.order_index_ajax').change(function(){
+    console.log(1);
+});

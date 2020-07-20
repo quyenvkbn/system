@@ -16,11 +16,12 @@ class RouterController extends Controller
      */
     public function index(Request $request)
     {
-        $router = Router::where(['canonical' => $request->canonical])->first();
+        $canonical = str_replace(env('QVSUFFIX', '.html'), '', $request->canonical);
+        $router = Router::where(['canonical' => $canonical])->first();
         if(!empty($router)){
             return \App::call(
                 $router->routerable_action,
-                ['id' => $router->routerable_id, 'canonical' => $request->canonical]
+                ['id' => $router->routerable_id, 'canonical' => $canonical]
             );
         }
         abort(404);
