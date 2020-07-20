@@ -10,7 +10,6 @@ return [
     'content'                   => 'Nội dung',
     'album_img'                 => 'Album ảnh',
     'brandname'                	=> 'Tên thương hiệu',
-
 	'create'                	=> 'Thêm mới',
     'name'                		=> 'Họ và tên',
     'role_name'                 => 'Tên vai trò',
@@ -52,4 +51,9 @@ return [
     'language'                  => 'Ngôn ngữ',
     'search'                    => 'Tìm kiếm',
     'email'                     => 'Email',
+    'aside'                     => 'Aside',
+    'aside_data'                => array(
+        'Không hiển thị', 'Hiển thị'
+    ),
+    'order'                     => 'Sắp xếp',
 ];

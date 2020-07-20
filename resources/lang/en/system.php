@@ -10,7 +10,6 @@ return [
     'description'              	=> 'Description',
     'content'                  	=> 'Content',
     'brandname'                	=> 'Brandname',
-
 	'create'                	=> 'Create',
     'name'                      => 'Name',
     'role_name'                	=> 'Role name',
@@ -52,4 +51,9 @@ return [
     'language'                  => 'Language',
     'search'                    => 'Search',
     'email'                     => 'Email',
+    'aside'                     => 'Aside',
+    'aside_data'                => array(
+        'Hidden', 'Show'
+    ),
+    'order'                     => 'Order',
 ];

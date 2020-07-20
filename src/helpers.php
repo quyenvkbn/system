@@ -108,24 +108,15 @@ if(!function_exists('updateBatch')){
 if(!function_exists('rewrite_url')){
     function rewrite_url($canonical = '', $slug = '', $id = 0, $modules = '', $suffix = TRUE, $fulllink = FALSE){
         $domain = ($fulllink == TRUE)?url('/'):'';
-        $mod = '';
-        /*if(in_array($modules, array('articles_tags'))){
-            $mod = 'tags/';
-        }*/
         if(!empty($canonical)){
-            return ($suffix == TRUE)?($domain.$mod.$canonical.env('QVSUFFIX', '.html')):($domain.$mod.$canonical);
+            return ($suffix == TRUE)?($domain.$canonical.env('QVSUFFIX', '.html')):($domain.$canonical);
         }
-
-        $id = ($id == 0)?'':$id;
-        switch(strtolower($modules)){
-            case 'attribute_categories':    $link = $domain.$slug.'-attc'.$id;  break;
-            case 'attribute':               $link = $domain.$slug.'-att'.$id;   break;
-            case 'article_categories':      $link = $domain.$slug.'-ac'.$id;    break;
-            case 'article':                 $link = $domain.$slug.'-a'.$id;     break;
-            case 'product_categories':      $link = $domain.$slug.'-pc'.$id;    break;
-            case 'product':                 $link = $domain.$slug.'-p'.$id;     break;
-            case 'tag':                     $link = $domain.$slug.'-t'.$id;     break;
-            default:                        $link = $domain.'error-404';
+        
+        $router = config('router');
+        if (!empty($router[$modules])) {
+            $link = $domain.$slug.'-'.$router[$modules].$id;
+        }else{
+            $link = $domain.'error-404';
         }
         return ($suffix == TRUE)?($link.env('QVSUFFIX', '.html')):$link;
     }

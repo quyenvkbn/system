@@ -200,3 +200,19 @@ function removeSlide(id){
         $(slides[i]).find('> div.modal').attr('id', 'exampleModal'+i);
     }
 }
+
+$('.order_index_ajax').change(function(){
+    let _this = $(this);
+    $.ajax({
+        url: $(this).data('url'),
+        data:{
+            order: $(this).val()
+        },
+        success: function(reponse){
+            _this.val(reponse);
+        },
+        error: function(reponse){
+            console.log(reponse.statusText);
+        }
+    });
+});
