@@ -202,5 +202,17 @@ function removeSlide(id){
 }
 
 $('.order_index_ajax').change(function(){
-    console.log(1);
+    let _this = $(this);
+    $.ajax({
+        url: $(this).data('url'),
+        data:{
+            order: $(this).val()
+        },
+        success: function(reponse){
+            _this.val(reponse);
+        },
+        error: function(reponse){
+            console.log(reponse.statusText);
+        }
+    });
 });
