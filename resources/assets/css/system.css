@@ -85,3 +85,12 @@
 .custom-input-file::-webkit-file-upload-button {
   height: 25px;line-height: 20px;
 }
+.table.table-head-fixed thead tr:nth-child(1) th{
+	min-width: 100%;
+}
+.table.table-head-fixed thead tr:nth-child(1) th:nth-child(1){
+	width: 50px;
+}
+.content-wrapper .card-body td img{
+	max-height: 100px;
+}
