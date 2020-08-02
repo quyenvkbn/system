@@ -216,3 +216,17 @@ $('.order_index_ajax').change(function(){
         }
     });
 });
+
+$(document).on('click', '.set_column_ajax', function(){
+    let _this = $(this);
+    $.ajax({
+        url: $(this).data('url'),
+        success: function(reponse){
+            _this.parent().html(reponse.html_column);
+        },
+        error: function(reponse){
+            console.log(reponse.statusText);
+        }
+    });
+    return false;
+});

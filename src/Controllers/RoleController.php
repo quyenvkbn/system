@@ -58,7 +58,7 @@ class RoleController extends Controller
     {
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
-        return redirect()->route('role.index');
+        return redirect()->route('role.index')->withSuccess(__('quyenvkbn::system.create_success'));
     }
     /**
      * Display the specified resource.
@@ -111,7 +111,7 @@ class RoleController extends Controller
 
         UpdateCKFinderUserRole(auth()->user());
 
-        return redirect()->route('role.index');
+        return redirect()->route('role.index')->withSuccess(__('quyenvkbn::system.update_success'));
     }
     /**
      * Remove the specified resource from storage.
@@ -122,6 +122,6 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         $role = DB::table("roles")->where('id',$role->id)->delete();
-        return redirect()->route('role.index');
+        return redirect()->route('role.index')->withSuccess(__('quyenvkbn::system.delete_success'));
     }
 }

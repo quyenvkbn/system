@@ -37,6 +37,6 @@ class SystemController extends Controller
     	if (!empty($data_update_and_create['update'])) {
     		updateBatch('systems', $data_update_and_create['update'], 'keyword', 'content_'.session('locale'));
     	}
-        return redirect()->route('system.edit',1);
+        return redirect()->route('system.edit',1)->withSuccess(__('quyenvkbn::system.update_success'));
     }
 }

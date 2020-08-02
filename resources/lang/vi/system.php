@@ -56,4 +56,8 @@ return [
         'Không hiển thị', 'Hiển thị'
     ),
     'order'                     => 'Sắp xếp',
+    'currency'                  => 'VNĐ',
+    'create_success'            => 'Thêm mới thành công!',
+    'update_success'            => 'Cập nhật thành công!',
+    'delete_success'            => 'Xóa thành công!',
 ];

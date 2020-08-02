@@ -20,9 +20,9 @@ class SiteSettings
     public function handle($request, Closure $next)
     {
         $site_settings = System::get()->pluck('content_'.session('locale'),'keyword');
-        // session('site_settings', $site_settings);
+        $request->site_settings = $site_settings;
         View::share('site_settings', $site_settings);
-
+        
         // Thống kê truy cập
         $counter_expire = 300;
         $ignore = false; 

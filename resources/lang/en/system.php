@@ -56,4 +56,8 @@ return [
         'Hidden', 'Show'
     ),
     'order'                     => 'Order',
+    'currency'                  => 'USD',
+    'create_success'            => 'Create success!',
+    'update_success'            => 'Update success!',
+    'delete_success'            => 'Delete success!',
 ];

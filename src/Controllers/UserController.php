@@ -49,7 +49,7 @@ class UserController extends Controller
         if ($request->rolesUser) {
             $user->syncRoles($request->rolesUser);
         }
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->withSuccess(__('quyenvkbn::system.create_success'));
     }
 
     /**
@@ -100,7 +100,7 @@ class UserController extends Controller
 
         UpdateCKFinderUserRole(auth()->user());
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->withSuccess(__('quyenvkbn::system.update_success'));
     }
 
     /**
@@ -113,6 +113,6 @@ class UserController extends Controller
     {
         $user->delete();
         
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->withSuccess(__('quyenvkbn::system.delete_success'));
     }
 }
