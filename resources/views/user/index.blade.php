@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('quyenvkbn::layout.layout')
 
 @section('title', 'Dashboard')
 

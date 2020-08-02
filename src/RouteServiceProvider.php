@@ -25,7 +25,16 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::pattern('extension', '(?:'.env('QVSUFFIX', '.html').')?');
         parent::boot();
+    }
 
+
+    /**
+     * Register any package services.
+     *
+     * @return void
+     */
+    public function register()
+    {
         Route::aliasMiddleware('language', 'Quyenvkbn\System\Middleware\LanguageSwitcher');
         Route::aliasMiddleware('site_settings', 'Quyenvkbn\System\Middleware\SiteSettings');
     }

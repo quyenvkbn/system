@@ -127,8 +127,12 @@ class SystemServiceProvider extends ServiceProvider
             __DIR__.'/../resources/assets/js' => public_path('js'),
             __DIR__.'/../resources/assets/css' => public_path('css'),
             __DIR__.'/../database/seeds' => base_path('database/seeds'),
-            __DIR__.'/../resources/views/layout' => base_path('resources/views'),
+            __DIR__.'/../resources/views/publishes' => base_path('resources/views'),
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/quyenvkbn'),
         ], 'system.default');
+        
+        $this->publishes([
+            __DIR__.'/../middleware' => base_path('app/Http/Middleware'),
+        ], 'customer.default');
     }
 }

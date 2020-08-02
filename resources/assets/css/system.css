@@ -94,3 +94,103 @@
 .content-wrapper .card-body td img{
 	max-height: 100px;
 }
+
+.pagination{
+	float: right;
+    display: block;
+    padding-right: 20px;
+}
+.pagination ul{
+	list-style-type: none;
+	padding:0px;
+	text-align: center;
+}
+.pagination ul li{
+	display: inline-block;
+}
+.pagination ul li span{
+	position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #dee2e6;
+}
+.content-wrapper .card-header .card-tools > form{
+	margin-bottom: 0px;
+}
+.card-header>.card-title{
+	margin-left: -.625rem;
+}
+
+/*btn-toggle*/
+.btn-toggle {
+  	background: #bdc1c8!important;
+  	line-height: -0.5rem;
+  	letter-spacing: 0.75px;
+  	left: 0.4125rem;
+  	color: #6b7381;
+  	padding: 0;
+  	position: relative;
+  	border: none!important;
+  	height: 1.5rem;
+  	width: 3rem;
+  	border-radius: 1.5rem!important;
+  	font-size: 0.55rem;
+}
+.btn-toggle:before,
+.btn-toggle:after {
+  	line-height: 1.5rem;
+  	text-align: center;
+  	font-weight: 600;
+  	text-transform: uppercase;
+  	position: absolute;
+  	bottom: 0;
+  	transition: opacity 0.25s;
+  	font-size: 0.55rem;
+  	color: #fff;
+  	letter-spacing: 0.75px;
+  	left: 0.4125rem;
+  	width: 2.325rem;
+}
+
+.btn-toggle:before {
+  	content: 'Off';
+  	text-align: right;
+}
+.btn-toggle:after {
+  	content: 'On';
+  	opacity: 0.5;
+  	text-align: left;
+  	opacity: 0;
+}
+.btn-toggle > .handle {
+  	position: absolute;
+  	top: 0.1875rem;
+  	left: 0.1875rem;
+  	width: 1.125rem;
+  	height: 1.125rem;
+  	border-radius: 1.125rem;
+  	background: #fff;
+  	transition: left 0.25s;
+}
+.btn-toggle.active > .handle {
+  	left: 1.6875rem;
+  	transition: left 0.25s;
+}
+.btn-toggle.active:before {
+  	opacity: 0;
+}
+.btn-toggle.active:after {
+  	opacity: 1;
+}
+.btn-toggle.active {
+  	transition: background-color 0.25s;
+  	background-color: #29b5a8!important;
+}
+.btn-toggle.success.active {
+  	transition: background-color 0.25s;
+  	background-color: green!important;
+}

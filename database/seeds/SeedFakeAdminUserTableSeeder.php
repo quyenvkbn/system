@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -21,7 +22,7 @@ class SeedFakeAdminUserTableSeeder extends Seeder
         $admin = User::create([
             'name' => 'Nguyễn Quyền',
             'email' => 'nguyenquyen18011996@gmail.com',
-            'password' => 'quyen123',
+            'password' => Hash::make('quyen123'),
         ]);
         
         $roleAdmin = Role::create(['name' => 'Admin']);
@@ -33,7 +34,7 @@ class SeedFakeAdminUserTableSeeder extends Seeder
         $user = User::create([
             'name' => 'Nguyễn Quyền',
             'email' => '01quyen01@gmail.com',
-            'password' => 'quyen123',
+            'password' => Hash::make('quyen123'),
         ]);
         
         $roleUser = Role::create(['name' => 'User']);

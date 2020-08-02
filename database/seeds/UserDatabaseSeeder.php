@@ -106,12 +106,26 @@ class UserDatabaseSeeder extends Seeder
            'mailsubricre-delete',
            'mailsubricre-all',
            
+           'customer-list',
+           'customer-create',
+           'customer-edit',
+           'customer-delete',
+           'customer-all',
+           
            'module-list',
            'module-edit',
 
            'file-list',
            'file-create',
            'file-delete',
+
+           'order-list',
+           'order-edit',
+           'order-delete',
+
+           'vietnamzone-list',
+           'vietnamzone-edit',
+           'vietnamzone-all',
 
            'system-edit',
            'ckfinder-admin',
