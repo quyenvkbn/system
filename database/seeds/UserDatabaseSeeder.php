@@ -123,6 +123,18 @@ class UserDatabaseSeeder extends Seeder
            'order-edit',
            'order-delete',
 
+           'shipping-list',
+           'shipping-create',
+           'shipping-edit',
+           'shipping-delete',
+           'shipping-all',
+
+           'coupon-list',
+           'coupon-create',
+           'coupon-edit',
+           'coupon-delete',
+           'coupon-all',
+
            'vietnamzone-list',
            'vietnamzone-edit',
            'vietnamzone-all',
