@@ -1,115 +1,126 @@
 .avatar img{
-	width: 100%;
-	height: 200px;
-	background-image: url('data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="images" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-images fa-w-18 fa-3x"><path fill="currentColor" d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v208c0 44.112 35.888 80 80 80h336zm96-80V80c0-26.51-21.49-48-48-48H144c-26.51 0-48 21.49-48 48v256c0 26.51 21.49 48 48 48h384c26.51 0 48-21.49 48-48zM256 128c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-96 144l55.515-55.515c4.686-4.686 12.284-4.686 16.971 0L272 256l135.515-135.515c4.686-4.686 12.284-4.686 16.971 0L512 208v112H160v-48z" class=""></path></svg>');
-	background-color:#eee;
-	background-repeat: no-repeat;
-	background-size: 40px;
+  width: 100%;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="images" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-images fa-w-18 fa-3x"><path fill="currentColor" d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v208c0 44.112 35.888 80 80 80h336zm96-80V80c0-26.51-21.49-48-48-48H144c-26.51 0-48 21.49-48 48v256c0 26.51 21.49 48 48 48h384c26.51 0 48-21.49 48-48zM256 128c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-96 144l55.515-55.515c4.686-4.686 12.284-4.686 16.971 0L272 256l135.515-135.515c4.686-4.686 12.284-4.686 16.971 0L512 208v112H160v-48z" class=""></path></svg>');
+  background-color:#eee;
+  background-repeat: no-repeat;
+  background-size: 40px;
     background-position-x: calc(50%);
     background-position-y: calc(50%);
-	border: 1px solid gray;
-	display: block;
-	margin-bottom: 10px;
-	object-fit: scale-down;
+  border: 1px solid gray;
+  display: block;
+  margin-bottom: 10px;
+  object-fit: scale-down;
 }
 .add-album, .add-slide{
-	height: 240px;
-	border:1px solid #ccc;
-	position: relative;
-	cursor: pointer;
+  height: 240px;
+  border:1px solid #ccc;
+  position: relative;
+  cursor: pointer;
 }
 .add-slide{
-	height: 150px;
+  height: 150px;
 }
 .add-album i, .add-slide i{
-	font-size: 40px;
-	color: #aaa;
-	position: relative;
-	top: calc(50% - 20px);
-	left: calc(50% - 20px);
+  font-size: 40px;
+  color: #aaa;
+  position: relative;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
 }
 .box-album > div, .box-button-album > div, .box-slide > div, .box-button-slide > div{
-	width: 50%;
-	float: left;
-	margin-bottom: 10px;
-	position: relative;
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  position: relative;
 }
 @media (min-width: 768px){
-	.box-album > div, .box-button-album > div, .box-slide > div, .box-button-slide > div{
-		width: 25%;
-		float: left;
-		margin-bottom: 10px;
-		position: relative;
-	}
+  .box-album > div, .box-button-album > div, .box-slide > div, .box-button-slide > div{
+    width: 25%;
+    float: left;
+    margin-bottom: 10px;
+    position: relative;
+  }
 }
 #box-album img, #box-slide img{
-	height: 150px;
+  height: 150px;
     width: 100%;
     object-fit: scale-down;
     border: 1px solid #eee;
 }
 #box-album .btn-group, #box-slide .btn-group{
-	position: absolute;
-	top: 0px;
-	right: 10px;
-	display: none;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  display: none;
 }
 #box-album .btn-group button, #box-slide .btn-group button{
-	padding: .15rem .25rem;
+  padding: .15rem .25rem;
 }
 #box-album > div:hover .btn-group, #box-slide > div:hover .btn-group{
-	display: inline-flex;
+  display: inline-flex;
 }
 #box-album .form-control, #box-slide .form-control{
-	border-radius: 0px;
+  border-radius: 0px;
 }
 #box-album input.form-control, #box-slide input.form-control{
-	height: 35px;
+  height: 35px;
 }
 #box-album textarea.form-control, #box-slide textarea.form-control{
-	height: 55px;
+  height: 55px;
 }
 #show-view .cke_top.cke_reset_all{
-	display: none;
+  display: none;
 }
 .d-contents{
-	display: contents;
+  display: contents;
 }
 .bd-1{
-	border:1px solid #eee;
+  border:1px solid #eee;
 }
 .p-10{
-	padding:10px;
+  padding:10px!important;
+}
+.mb-0{
+  margin-bottom:0px!important;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.p-15{
+  padding:15px!important;
+}
+.select2-coupon{
+  width: 100%;
 }
 
 .custom-input-file::-webkit-file-upload-button {
   height: 25px;line-height: 20px;
 }
 .table.table-head-fixed thead tr:nth-child(1) th{
-	min-width: 100%;
+  min-width: 100%;
 }
 .table.table-head-fixed thead tr:nth-child(1) th:nth-child(1){
-	width: 50px;
+  width: 50px;
 }
 .content-wrapper .card-body td img{
-	max-height: 100px;
+  max-height: 100px;
 }
-
 .pagination{
-	float: right;
+  float: right;
     display: block;
     padding-right: 20px;
 }
 .pagination ul{
-	list-style-type: none;
-	padding:0px;
-	text-align: center;
+  list-style-type: none;
+  padding:0px;
+  text-align: center;
 }
 .pagination ul li{
-	display: inline-block;
+  display: inline-block;
 }
 .pagination ul li span{
-	position: relative;
+  position: relative;
     display: block;
     padding: .5rem .75rem;
     margin-left: -1px;
@@ -119,78 +130,78 @@
     border: 1px solid #dee2e6;
 }
 .content-wrapper .card-header .card-tools > form{
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .card-header>.card-title{
-	margin-left: -.625rem;
+  margin-left: -.625rem;
 }
 
 /*btn-toggle*/
 .btn-toggle {
-  	background: #bdc1c8!important;
-  	line-height: -0.5rem;
-  	letter-spacing: 0.75px;
-  	left: 0.4125rem;
-  	color: #6b7381;
-  	padding: 0;
-  	position: relative;
-  	border: none!important;
-  	height: 1.5rem;
-  	width: 3rem;
-  	border-radius: 1.5rem!important;
-  	font-size: 0.55rem;
+    background: #bdc1c8!important;
+    line-height: -0.5rem;
+    letter-spacing: 0.75px;
+    left: 0.4125rem;
+    color: #6b7381;
+    padding: 0;
+    position: relative;
+    border: none!important;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 1.5rem!important;
+    font-size: 0.55rem;
 }
 .btn-toggle:before,
 .btn-toggle:after {
-  	line-height: 1.5rem;
-  	text-align: center;
-  	font-weight: 600;
-  	text-transform: uppercase;
-  	position: absolute;
-  	bottom: 0;
-  	transition: opacity 0.25s;
-  	font-size: 0.55rem;
-  	color: #fff;
-  	letter-spacing: 0.75px;
-  	left: 0.4125rem;
-  	width: 2.325rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.25s;
+    font-size: 0.55rem;
+    color: #fff;
+    letter-spacing: 0.75px;
+    left: 0.4125rem;
+    width: 2.325rem;
 }
 
 .btn-toggle:before {
-  	content: 'Off';
-  	text-align: right;
+    content: 'Off';
+    text-align: right;
 }
 .btn-toggle:after {
-  	content: 'On';
-  	opacity: 0.5;
-  	text-align: left;
-  	opacity: 0;
+    content: 'On';
+    opacity: 0.5;
+    text-align: left;
+    opacity: 0;
 }
 .btn-toggle > .handle {
-  	position: absolute;
-  	top: 0.1875rem;
-  	left: 0.1875rem;
-  	width: 1.125rem;
-  	height: 1.125rem;
-  	border-radius: 1.125rem;
-  	background: #fff;
-  	transition: left 0.25s;
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 1.125rem;
+    background: #fff;
+    transition: left 0.25s;
 }
 .btn-toggle.active > .handle {
-  	left: 1.6875rem;
-  	transition: left 0.25s;
+    left: 1.6875rem;
+    transition: left 0.25s;
 }
 .btn-toggle.active:before {
-  	opacity: 0;
+    opacity: 0;
 }
 .btn-toggle.active:after {
-  	opacity: 1;
+    opacity: 1;
 }
 .btn-toggle.active {
-  	transition: background-color 0.25s;
-  	background-color: #29b5a8!important;
+    transition: background-color 0.25s;
+    background-color: #29b5a8!important;
 }
 .btn-toggle.success.active {
-  	transition: background-color 0.25s;
-  	background-color: green!important;
+    transition: background-color 0.25s;
+    background-color: green!important;
 }
